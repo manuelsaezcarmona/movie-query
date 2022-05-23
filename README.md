@@ -51,6 +51,12 @@ Seguramente con el uso de Contexto seria suficiente.
 
 ## Helpers
 
+geturlImages: Devuelve la URL absoluta para incorporar su imagen a los componentes
+
+## Organizacion de componentes.
+
+Al no ser un proyecto grande todos los componentes se encuentran en el folder /components, si la app escalase habria que plantearse otros criterios (features, atomic design etc...)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
