@@ -16,7 +16,7 @@ Seguramente con el uso de Contexto seria suficiente.
 ## Definicion de Datos.
 
 - user.- Aunque no es requerimiento en este estado guardo los favoritos. En caso de escalar puede
-  incorporarse mas datos para el usuario.
+  incorporarse mas datos para el usuario. En este caso pongo un usuario de ejemplo dentro del estado inicial de user
 - Movies. Estado que guardara las peliculas obtenidas de la API.
   -Active Movie. Pelicula que se está consultando.
 
