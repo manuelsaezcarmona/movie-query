@@ -10,7 +10,23 @@ export const getConfigurationAPI = async () => {
   try {
     const resp = await fetch(`${API_URL}/configuration?api_key=${API_KEY}`);
     const data = await resp.json();
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 
+/**
+ * Gets movie data
+ * @param {number} id movie identifier
+ * @returns {object} movie information
+ */
+export const getMovieById = async (id) => {
+  try {
+    const resp = await fetch(
+      `${API_URL}/movie/${id}?api_key=${API_KEY}&language=${DEFAULT_LANGUAGE}`
+    );
+    const data = await resp.json();
     return data;
   } catch (error) {
     return error;

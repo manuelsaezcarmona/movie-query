@@ -1,8 +1,8 @@
 import './App.css';
-import { getConfigurationAPI } from './services/http';
+import { getMovieById } from './services/http';
 
 async function App() {
-  const data = await getConfigurationAPI();
+  const data = await getMovieById(24428);
 
   console.log(data);
 
