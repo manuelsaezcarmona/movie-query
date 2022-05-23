@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { API_KEY, DEFAULT_LANGUAGE, IMAGE_URI, API_URL } from './constants';
+import { API_KEY, DEFAULT_LANGUAGE, API_URL } from './constants';
 
 /** Get Configuration settings
  * @returns {object} configuration API
@@ -17,7 +17,7 @@ export const getConfigurationAPI = async () => {
 };
 
 /**
- * Gets movie data
+ * Gets movie detail data
  * @param {number} id movie identifier
  * @returns {object} movie information
  */
@@ -46,7 +46,7 @@ export const getMovieById = async (id) => {
 export const getMoviesByTerm = async (term) => {
   try {
     const resp = await fetch(
-      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}`
+      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}&language=${DEFAULT_LANGUAGE}`
     );
     const data = resp.json();
 
