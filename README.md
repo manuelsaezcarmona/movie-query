@@ -1,5 +1,13 @@
 # Movie Query.
 
+## Errores en las llamadas API
+
+En las llamadas puede haber dos errores.
+1 - En el dominio URL al que se llama.
+2 - Algun parametro como una API_KEY incorrecta.
+
+En el primer caso se enviara un error (try / catch), en el segundo caso devolvera un objeto data con información sobre el error producido. En el metodo no se hace necesario mas gestion de errores.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

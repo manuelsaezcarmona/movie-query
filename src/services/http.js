@@ -32,3 +32,26 @@ export const getMovieById = async (id) => {
     return error;
   }
 };
+
+/**
+ * Gets movies list by search term
+ * @param {string} term search term
+ * @returns {{
+ *  page: number,
+ *  results: object,
+ *  total_pages: number,
+ *  total_results: number
+ * }} movies search result
+ */
+export const getMoviesByTerm = async (term) => {
+  try {
+    const resp = await fetch(
+      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}`
+    );
+    const data = resp.json();
+
+    return data;
+  } catch (error) {
+    return error;
+  }
+};

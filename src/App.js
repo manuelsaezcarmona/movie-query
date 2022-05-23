@@ -1,8 +1,8 @@
 import './App.css';
-import { getMovieById } from './services/http';
+import { getMoviesByTerm } from './services/http';
 
 async function App() {
-  const data = await getMovieById(24428);
+  const data = await getMoviesByTerm(24428);
 
   console.log(data);
 
