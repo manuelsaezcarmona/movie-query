@@ -13,7 +13,8 @@ export default function AppRouter() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/favs" element={<Favourites />} />
-          <Route path="/:movieid" element={<DetailMovie />} />
+          <Route path="/id/:movieid" element={<DetailMovie />} />
+          <Route path="*" element={<div>Ruta no encontrada</div>} />
         </Routes>
       </Router>
     </div>
