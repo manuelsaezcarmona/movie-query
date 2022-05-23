@@ -1,5 +1,34 @@
 # Movie Query.
 
+# Gestion de versiones GIT | GitHub.
+
+Uso git para la gestion local de versiones y github para la gestion descentralizada
+
+Las ramas que uso suelen ser:
+
+- master - main: unicamente para iniciar el proyecto y para el posterior deploy.
+- structure: la parte de creacion de estructura para que el resto de la app pueda
+  desarrollarse. Esta suele incluir dos subramas
+  - structure-data. Defino e implemento la estructura de datos, los metodos para obtenerlos y el sistema de gestion de estado si es necesario global o por feature. Redux o Context en función del tamaño del proyecto.
+  - structure-route. Definir las rutas y endpoints de la app y que funcione correctamente el enrutamiento.
+- develop - Se desarrolla la app.
+
+  - develop-static. Se desarrollan los componente sin tener logica en funcion del diseño que previamente se ha entregado.
+    - Pantallas (Pages)
+    - Layouts
+    - Containers
+    - Components
+  - develop-dynamic: Programar la logica del negocio.
+    - Actions y gestion del etado
+    - hooks
+    - conditional rendering
+    - implementacion de librerias.
+  - testing: Se encarga de realizar los test unitarios de la aplicacion. Esta rama se puede ir desarrollando en cada una de las ramas anteriores .
+
+  La politica de merge que uso es:
+  Se trabaja en una subrama, cuando se termina una feature se mergea con su "rama padre". Por ejemplo. structure-data se mergea con structure.
+  De esta manera no se mergea en la rama master|main hasta que no se haya realizado y probado las funcionalidades.
+
 ## Errores en las llamadas API
 
 En las llamadas puede haber dos errores.
