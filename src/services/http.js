@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
 import { API_KEY, DEFAULT_LANGUAGE, API_URL } from './constants';
 
 /** Get Configuration settings
  * @returns {object} configuration API
  */
 
-// * https://api.themoviedb.org/3/configuration?api_key=8f781d70654b5a6f2fa69770d1d115a3
 export const getConfigurationAPI = async () => {
   try {
     const resp = await fetch(`${API_URL}/configuration?api_key=${API_KEY}`);
@@ -36,6 +34,7 @@ export const getMovieById = async (id) => {
 /**
  * Gets movies list by search term
  * @param {string} term search term
+ * @param {number} page search
  * @returns {{
  *  page: number,
  *  results: object,
@@ -43,10 +42,10 @@ export const getMovieById = async (id) => {
  *  total_results: number
  * }} movies search result
  */
-export const getMoviesByTerm = async (term) => {
+export const getMoviesByTerm = async (term, page = 1) => {
   try {
     const resp = await fetch(
-      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}&language=${DEFAULT_LANGUAGE}`
+      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}&language=${DEFAULT_LANGUAGE}page=${page}`
     );
     const data = resp.json();
 

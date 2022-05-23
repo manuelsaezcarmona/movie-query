@@ -10,6 +10,13 @@ En el primer caso se enviara un error (try / catch), en el segundo caso devolver
 
 ## Definicion de Datos.
 
+- user.- Aunque no es requerimiento en este estado guardo los favoritos. En caso de escalar puede
+  incorporarse mas datos para el usuario.
+- Movies. Estado que guardara las peliculas obtenidas de la API.
+  -Active Movie. Pelicula que se está consultando.
+
+## Helpers
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
