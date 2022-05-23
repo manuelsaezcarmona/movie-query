@@ -8,6 +8,11 @@ En las llamadas puede haber dos errores.
 
 En el primer caso se enviara un error (try / catch), en el segundo caso devolvera un objeto data con información sobre el error producido. En el metodo no se hace necesario mas gestion de errores.
 
+# Gestion Global del estado.
+
+Para una prueba usar la libreria Redux y thunk como "middleware" para acciones asincronas, pueder ser "overKill" pero la idea es ponerla en practica para aplicaciones con más escala.
+Seguramente con el uso de Contexto seria suficiente.
+
 ## Definicion de Datos.
 
 - user.- Aunque no es requerimiento en este estado guardo los favoritos. En caso de escalar puede
