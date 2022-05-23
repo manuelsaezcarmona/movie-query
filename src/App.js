@@ -1,6 +1,11 @@
 import './App.css';
+import { getConfigurationAPI } from './services/http';
 
-function App() {
+async function App() {
+  const data = await getConfigurationAPI();
+
+  console.log(data);
+
   return (
     <div className="App">
       <header className="App-header">
