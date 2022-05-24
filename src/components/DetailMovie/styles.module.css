@@ -1,7 +1,102 @@
 .film-detail {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
 }
 
 .film-header {
-  background-image: url('https://image.tmdb.org/t/p/w500/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg');
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35vh;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 0 1em;
+}
+.film-header::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('https://image.tmdb.org/t/p/w500/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg');
+  z-index: -1;
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  transform: skewY(-2.2deg);
+  transform-origin: 0 0;
+  /*chrome antialias fix*/
+  -webkit-backface-visibility: hidden;
+}
+
+.film-header__title,
+.film-header__tagline,
+.film-header__valuation {
+  color: var(--navbar-background-color);
+}
+.film-header__title {
+  font-size: 1.2em;
+  margin-bottom: 0.5vh;
+}
+
+.film-header__tagline {
+  font-size: small;
+  margin-bottom: 0.5vh;
+}
+
+.film-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.film-body__image {
+  margin-top: -9vh;
+
+  max-width: 50%;
+  max-height: auto;
+  object-fit: contain;
+  border: 2px white solid;
+  align-self: center;
+  box-shadow: var(--shadow);
+}
+.film-body__title,
+.film-body__release {
+  margin: 1vh 0;
+  text-align: center;
+}
+
+.film-body__sipnosis {
+  line-height: 1.3;
+}
+
+@media (min-width: 769px) {
+  .film-header {
+    height: 40vh;
+    align-items: center;
+  }
+  .film-body__image {
+    margin-left: 8%;
+    max-width: 30%;
+  }
+  .film-header__title {
+    font-size: 2em;
+  }
+  .film-header__tagline,
+  .film-header__valuation {
+    font-size: 1.1em;
+  }
+  .film-body {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .film-body__data {
+    padding-left: 2em;
+  }
 }
