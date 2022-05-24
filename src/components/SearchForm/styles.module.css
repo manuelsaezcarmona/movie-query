@@ -20,9 +20,9 @@
   outline: none;
   padding: 16px;
   width: 100%;
-  -webkit-box-shadow: var(--shadow);
-  -moz-box-shadow: var(--shadow);
-  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow-card);
+  -moz-box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-card);
 }
 
 .search__button {

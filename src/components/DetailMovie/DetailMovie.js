@@ -10,7 +10,11 @@ export default function DetailMovie() {
         </p>
       </header>
       <section className="film-body">
-        <img className="film-body__image" src="" alt="Poster de la pelicula" />
+        <img
+          className="film-body__image"
+          src="https://image.tmdb.org/t/p/w500//gsIaANx3PVGMkzHfwdCOMUP0o7U.jpg"
+          alt="Poster de la pelicula"
+        />
         <div className="film-body__data">
           <h3 className="film-body__title">Jack Reacher: Never Go Back</h3>
           <p className="film-body__release">

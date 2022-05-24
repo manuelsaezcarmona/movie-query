@@ -1,3 +1,5 @@
+import MovieCard from '../MovieCard/MovieCard';
+
 export default function Favourites() {
   return (
     <main className="main-container">
@@ -5,7 +7,9 @@ export default function Favourites() {
       <section className="favourites">
         <p className="favourites__text">No se han encontrado Peliculas</p>
         <ul className="favourites__list">
-          <li className="favourites__item">MovieCard</li>
+          <li className="favourites__item">
+            <MovieCard />
+          </li>
         </ul>
       </section>
     </main>

@@ -1,3 +1,4 @@
+import MovieCard from '../MovieCard/MovieCard';
 import SearchForm from '../SearchForm/SearchForm';
 
 export default function Main() {
@@ -9,7 +10,10 @@ export default function Main() {
       <section className="movies">
         <p className="movies__text">No se han encontrado Peliculas</p>
         <ul className="movies__list">
-          <li className="movies__item">MovieCard</li>
+          <li className="movies__item">
+            {' '}
+            <MovieCard />
+          </li>
         </ul>
       </section>
     </main>
