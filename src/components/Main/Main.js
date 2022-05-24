@@ -1,8 +1,10 @@
+import SearchForm from '../SearchForm/SearchForm';
+
 export default function Main() {
   return (
     <main className="main-container">
       <div className="searchContainer">
-        <p>Componente Search Form</p>
+        <SearchForm />
       </div>
       <section className="movies">
         <p className="movies__text">No se han encontrado Peliculas</p>
