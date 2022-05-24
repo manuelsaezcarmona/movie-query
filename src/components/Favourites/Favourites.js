@@ -1,7 +1,13 @@
 export default function Favourites() {
   return (
-    <div>
-      <h1>Favourites</h1>
-    </div>
+    <main className="main-container">
+      <h2>Mis Peliculas Favoritas</h2>
+      <section className="favourites">
+        <p className="favourites__text">No se han encontrado Peliculas</p>
+        <ul className="favourites__list">
+          <li className="favourites__item">MovieCard</li>
+        </ul>
+      </section>
+    </main>
   );
 }
