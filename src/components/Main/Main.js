@@ -1,4 +1,4 @@
-import MovieCard from '../MovieCard/MovieCard';
+import MoviesList from '../MoviesList/MoviesList';
 import SearchForm from '../SearchForm/SearchForm';
 
 export default function Main() {
@@ -7,15 +7,7 @@ export default function Main() {
       <div className="searchContainer">
         <SearchForm />
       </div>
-      <section className="movies">
-        <p className="movies__text">No se han encontrado Peliculas</p>
-        <ul className="movies__list">
-          <li className="movies__item">
-            {' '}
-            <MovieCard />
-          </li>
-        </ul>
-      </section>
+      <MoviesList />
     </main>
   );
 }
