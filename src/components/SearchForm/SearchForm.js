@@ -1,15 +1,19 @@
 import { GoSearch } from 'react-icons/go';
+import { useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import styles from './styles.module.css';
+import { startGetAllMovies } from '../../redux/actions/movie';
 
 export default function SearchForm() {
-  const [formValues, handleInputChange] = useForm({ search: '' });
-
+  const [formValues, handleInputChange, reset] = useForm({ search: '' });
+  const dispatch = useDispatch();
   const { search } = formValues;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(search);
+    dispatch(startGetAllMovies(search, 1));
+    reset();
   };
 
   return (
