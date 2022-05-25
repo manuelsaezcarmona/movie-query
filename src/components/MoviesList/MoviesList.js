@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieCard from '../MovieCard/MovieCard';
-// import { resultMoviesPage } from '../../services/mockdata';
 import styles from './styles.module.css';
 import { startGetAllMovies } from '../../redux/actions/movie';
+import { DEFAULT_VALUE } from '../../services/constants';
 
 export default function MoviesList() {
   const [loading, setLoading] = useState(false);
@@ -11,7 +11,7 @@ export default function MoviesList() {
   const { movies } = useSelector((state) => state.movie);
 
   useEffect(() => {
-    dispatch(startGetAllMovies('bingueros', 1));
+    dispatch(startGetAllMovies(DEFAULT_VALUE, 1));
     setLoading(true);
   }, []);
 

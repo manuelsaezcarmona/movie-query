@@ -5,6 +5,7 @@ import { DEFAULT_WIDTH_POSTER, IMAGE_URL } from '../../services/constants';
 import styles from './styles.module.css';
 import MovieCardEmptyImage from '../MovieCardEmptyImage/MovieCardEmptyImage';
 import { setActiveMovie } from '../../redux/actions/movie';
+import { addFavourite, deleteFavourite } from '../../redux/actions/user';
 
 export default function MovieCard({ movie }) {
   const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${movie.poster_path}`;
@@ -13,10 +14,12 @@ export default function MovieCard({ movie }) {
 
   const handleAddFavourite = () => {
     dispatch(setActiveMovie(movie));
+    dispatch(addFavourite(movie));
   };
 
   const handleDeleteFavourite = () => {
     dispatch(setActiveMovie(movie));
+    dispatch(deleteFavourite(movie.id));
   };
 
   return (
