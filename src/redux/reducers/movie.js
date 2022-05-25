@@ -4,7 +4,8 @@ const initialState = {
   page: 0,
   movies: [],
   activemovie: {},
-  totalpages: 0
+  totalpages: 0,
+  detailedmovie: {}
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -21,6 +22,13 @@ export const movieReducer = (state = initialState, action) => {
         ...state,
         activemovie: action.payload
       };
+    case types.MOVIE_SET_DETAILED_MOVIE: {
+      // console.log(action.payload);
+      return {
+        ...state,
+        detailedmovie: action.payload
+      };
+    }
     default:
       return state;
   }

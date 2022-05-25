@@ -4,5 +4,6 @@ export const types = {
 
   MOVIE_GET_ALLMOVIES: '@movie/getall',
   MOVIE_GET_MOVIE_BY_ID: '@movie/getbyid',
-  MOVIE_SET_ACTIVE_MOVIE: '@movie/setactive'
+  MOVIE_SET_ACTIVE_MOVIE: '@movie/setactive',
+  MOVIE_SET_DETAILED_MOVIE: '@movie/setdetailed'
 };
