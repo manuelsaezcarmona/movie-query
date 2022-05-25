@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import MovieCard from '../MovieCard/MovieCard';
-import { resultMoviesPage } from '../../services/mockdata';
+// import { resultMoviesPage } from '../../services/mockdata';
 import styles from './styles.module.css';
+import { startGetAllMovies } from '../../redux/actions/movie';
 
 export default function MoviesList() {
-  const loading = true;
-  const movies = resultMoviesPage.results;
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { movies } = useSelector((state) => state.movie);
+
+  useEffect(() => {
+    dispatch(startGetAllMovies('bingueros', 1));
+    setLoading(true);
+  }, []);
 
   if (!loading) {
     return <div className="spinner" />;
   }
   return (
     <section className={styles.movies}>
-      <p className={styles.movies__text}>No se han encontrado Peliculas</p>
-      <ul className={styles.movies__list}>
-        {movies.map((movie) => (
-          <li className={styles.movies__item} key={movie.id}>
-            <MovieCard movie={movie} />
-          </li>
-        ))}
-      </ul>
+      {movies.length ? (
+        <ul className={styles.movies__list}>
+          {movies.map((movie) => (
+            <li className={styles.movies__item} key={movie.id}>
+              <MovieCard movie={movie} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.movies__text}>No se han encontrado Películas</p>
+      )}
     </section>
   );
 }

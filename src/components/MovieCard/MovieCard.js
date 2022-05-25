@@ -17,7 +17,7 @@ export default function MovieCard({ movie }) {
             alt="Jack el destripador"
           />
         ) : (
-          <MovieCardEmptyImage />
+          <MovieCardEmptyImage className={styles['movie-card__image']} />
         )}
       </header>
 
