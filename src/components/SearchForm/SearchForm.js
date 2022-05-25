@@ -11,7 +11,6 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(search);
     dispatch(startGetAllMovies(search, 1));
     reset();
   };

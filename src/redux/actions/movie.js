@@ -17,3 +17,8 @@ export const startGetAllMovies = (term, page) => async (dispatch) => {
     return error;
   }
 };
+
+export const setActiveMovie = (movie) => ({
+  type: types.MOVIE_SET_ACTIVE_MOVIE,
+  payload: movie
+});

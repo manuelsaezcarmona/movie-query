@@ -16,6 +16,11 @@ export const movieReducer = (state = initialState, action) => {
         movies: action.payload.results,
         totalpages: action.payload.total_pages
       };
+    case types.MOVIE_SET_ACTIVE_MOVIE:
+      return {
+        ...state,
+        activemovie: action.payload
+      };
     default:
       return state;
   }
