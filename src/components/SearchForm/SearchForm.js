@@ -1,3 +1,4 @@
+import { GoSearch } from 'react-icons/go';
 import styles from './styles.module.css';
 
 export default function SearchForm() {
@@ -6,7 +7,7 @@ export default function SearchForm() {
       <form action="" className={styles.search__form}>
         <input className={styles.search__inputtext} type="text" name="search" placeholder="Busca tu pelicula" />
         <button className={styles.search__button} type="button">
-          Busca
+          <GoSearch className={styles.search__icon} />
         </button>
       </form>
     </div>
