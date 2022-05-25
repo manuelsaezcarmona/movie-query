@@ -2,6 +2,7 @@ import React from 'react';
 import { BsBookmarkPlus, BsBookmarkDashFill } from 'react-icons/bs';
 import { DEFAULT_WIDTH_POSTER, IMAGE_URL } from '../../services/constants';
 import styles from './styles.module.css';
+import MovieCardEmptyImage from '../MovieCardEmptyImage/MovieCardEmptyImage';
 
 export default function MovieCard({ movie }) {
   const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${movie.poster_path}`;
@@ -9,11 +10,15 @@ export default function MovieCard({ movie }) {
   return (
     <article className={styles['movie-card']}>
       <header className="movie-card__header">
-        <img
-          className={styles['movie-card__image']}
-          src={imgPosterPath}
-          alt="Jack el destripador"
-        />
+        {movie.poster_path ? (
+          <img
+            className={styles['movie-card__image']}
+            src={imgPosterPath}
+            alt="Jack el destripador"
+          />
+        ) : (
+          <MovieCardEmptyImage />
+        )}
       </header>
 
       <div className={styles['movie-card__body']}>
