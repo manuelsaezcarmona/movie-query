@@ -1,0 +1,25 @@
+.spinner {
+  border: 14px solid rgba(0, 0, 0, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-left-color: var(--navbar-color);
+  animation: spin 1s ease infinite;
+  margin: 20vh auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 769px) {
+  .spinner {
+    margin: 30vh auto;
+  }
+}
