@@ -1,14 +1,25 @@
 /* eslint-disable max-len */
 
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styles from './styles.module.css';
 
 export default function DetailMovie() {
+  // eslint-disable-next-line no-unused-vars
+  const [movie, setMovie] = useState({});
+
+  const { movieid } = useParams();
+
+  console.log(movieid);
+
   return (
     <main className="main-container">
       <div className={styles['film-detail']}>
         <header className={styles['film-header']}>
           <h2 className={styles['film-header__title']}>Jack Reacher: Nunca vuelvas atrás</h2>
-          <p className={styles['film-header__tagline']}>Nunca cedas. Nunca te des por vencido. Nunca vuelvas.</p>
+          <p className={styles['film-header__tagline']}>
+            Nunca cedas. Nunca te des por vencido. Nunca vuelvas.
+          </p>
           <p className={styles['film-header__valuation']}>
             Valoracion: <span className={styles['film-header__rate']}>5.9</span>
           </p>
@@ -26,10 +37,11 @@ export default function DetailMovie() {
               Fecha de Estreno: <span className={styles['film-body__date']}>12-09-2009</span>
             </p>
             <p className={styles['film-body__sipnosis']}>
-              La Mayor Susan Turner, líder de la antigua unidad militar de Reacher, es falsamente acusada de traición.
-              Jack Reacher tendrá que sacarla de prisión y descubrir la verdad detrás de una conspiración gubernamental
-              para limpiar sus nombres y salvar sus vidas. Durante el escape, Reacher descubrirá un secreto de su pasado
-              que podría cambiar su vida para siempre. Secuela de Jack Reacher (2012).
+              La Mayor Susan Turner, líder de la antigua unidad militar de Reacher, es falsamente
+              acusada de traición. Jack Reacher tendrá que sacarla de prisión y descubrir la verdad
+              detrás de una conspiración gubernamental para limpiar sus nombres y salvar sus vidas.
+              Durante el escape, Reacher descubrirá un secreto de su pasado que podría cambiar su
+              vida para siempre. Secuela de Jack Reacher (2012).
             </p>
           </div>
         </section>

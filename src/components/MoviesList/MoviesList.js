@@ -23,7 +23,7 @@ export default function MoviesList() {
       {movies.length ? (
         <ul className={styles.movies__list}>
           {movies.map((movie) => (
-            <li className={styles.movies__item} key={movie.id}>
+            <li className={styles.movies__item} key={`${movie.id}_mov`}>
               <MovieCard movie={movie} />
             </li>
           ))}
