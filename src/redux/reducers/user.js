@@ -12,7 +12,11 @@ export const userReducer = (state = initialState, action) => {
         ...state,
         favourites: [...state.favourites, action.payload]
       };
-
+    case types.USER_REMOVE_FAVOURITES:
+      return {
+        ...state,
+        favourites: state.favourites.filter((movie) => movie.id !== action.payload)
+      };
     default:
       return state;
   }

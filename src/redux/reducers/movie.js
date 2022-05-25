@@ -1,8 +1,10 @@
 import { types } from '../actiontypes';
 
 const initialState = {
+  page: 0,
   movies: [],
-  activemovie: {}
+  activemovie: {},
+  totalpages: 0
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -10,7 +12,14 @@ export const movieReducer = (state = initialState, action) => {
     case types.MOVIE_GET_ALLMOVIES:
       return {
         ...state,
-        movies: state.payload
+        page: action.payload.page,
+        movies: action.payload.results,
+        totalpages: action.payload.total_pages
+      };
+    case types.MOVIE_SET_ACTIVE_MOVIE:
+      return {
+        ...state,
+        activemovie: action.payload
       };
     default:
       return state;

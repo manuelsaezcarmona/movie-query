@@ -258,7 +258,7 @@ export const resultMoviesPage = {
       overview: '',
       popularity: 0.6,
       poster_path: null,
-      release_date: '',
+      release_date: '2022-05-08',
       title: 'Ripper',
       video: false,
       vote_average: 0,
