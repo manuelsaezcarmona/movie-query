@@ -4,7 +4,12 @@ import { resultMoviesPage } from '../../services/mockdata';
 import styles from './styles.module.css';
 
 export default function MoviesList() {
+  const loading = true;
   const movies = resultMoviesPage.results;
+
+  if (!loading) {
+    return <div className="spinner" />;
+  }
   return (
     <section className={styles.movies}>
       <p className={styles.movies__text}>No se han encontrado Peliculas</p>

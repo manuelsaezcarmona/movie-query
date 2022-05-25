@@ -1,4 +1,5 @@
 .movies__list {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
   gap: 6px;
