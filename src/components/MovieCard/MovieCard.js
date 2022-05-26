@@ -1,13 +1,16 @@
 import React from 'react';
 import { BsBookmarkPlus, BsBookmarkDashFill } from 'react-icons/bs';
-import { useDispatch } from 'react-redux';
+import {
+  useDispatch
+  // useSelector
+} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { DEFAULT_WIDTH_POSTER, IMAGE_URL } from '../../services/constants';
 import styles from './styles.module.css';
 import MovieCardEmptyImage from '../MovieCardEmptyImage/MovieCardEmptyImage';
 import { setActiveMovie } from '../../redux/actions/movie';
 import { addFavourite, deleteFavourite } from '../../redux/actions/user';
-// import { isFavouriteMovie } from '../../helpers/isfavourite';
+import { selectFavMovieById } from '../../redux/selectors/index';
 
 export default function MovieCard({ movie }) {
   const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${movie.poster_path}`;
@@ -23,6 +26,8 @@ export default function MovieCard({ movie }) {
     dispatch(setActiveMovie(movie));
     dispatch(deleteFavourite(movie.id));
   };
+
+  const favMovie = selectFavMovieById(movie.id);
 
   return (
     <article className={styles['movie-card']}>
@@ -48,8 +53,11 @@ export default function MovieCard({ movie }) {
             <p className={styles['movie-card__date']}>{movie.release_date}</p>
           </div>
 
-          <BsBookmarkPlus className={styles.bookmark} onClick={handleAddFavourite} />
-          <BsBookmarkDashFill className={styles.bookmark} onClick={handleDeleteFavourite} />
+          {!favMovie ? (
+            <BsBookmarkPlus className={styles.bookmark} onClick={handleAddFavourite} />
+          ) : (
+            <BsBookmarkDashFill className={styles.bookmark} onClick={handleDeleteFavourite} />
+          )}
 
           <div className={styles['movie-card__ratecontainer']}>
             <p className={styles['movie-card__ratelabel']}>Valoración</p>

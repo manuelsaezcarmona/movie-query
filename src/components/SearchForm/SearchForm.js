@@ -21,7 +21,7 @@ export default function SearchForm() {
 
   return (
     <div className={styles.search}>
-      <form className={styles.search__form}>
+      <form onSubmit={handleSubmit} className={styles.search__form}>
         <input
           className={styles.search__inputtext}
           type="text"
@@ -30,7 +30,7 @@ export default function SearchForm() {
           onChange={handleInputChange}
           placeholder="Busca tu pelicula"
         />
-        <button className={styles.search__button} type="button" onClick={handleSubmit}>
+        <button className={styles.search__button} type="submit" onClick={handleSubmit}>
           <GoSearch className={styles.search__icon} />
         </button>
       </form>
