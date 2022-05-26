@@ -1,11 +1,11 @@
 import { types } from '../actiontypes';
 
-export const addFavourite = (film) => ({
+export const addFavourite = (movie) => ({
   type: types.USER_ADD_FAVOURITES,
-  payload: film
+  payload: movie
 });
 
-export const deleteFavourite = (filmID) => ({
+export const deleteFavourite = (movieID) => ({
   type: types.USER_REMOVE_FAVOURITES,
-  payload: filmID
+  payload: movieID
 });

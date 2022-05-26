@@ -1,36 +1,52 @@
-/* eslint-disable max-len */
-
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './styles.module.css';
+import { IMAGE_URL, DEFAULT_WIDTH_BACKDROP, DEFAULT_WIDTH_POSTER } from '../../services/constants';
+import { startGetMovieById } from '../../redux/actions/movie';
 
 export default function DetailMovie() {
+  const { detailedmovie } = useSelector((state) => state.movie);
+  const dispatch = useDispatch();
+  const { movieid } = useParams();
+
+  useEffect(() => {
+    dispatch(startGetMovieById(movieid));
+  }, []);
+  const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${detailedmovie.poster_path}`;
+  // eslint-disable-next-line no-unused-vars
+  const imgHeroPath = `${IMAGE_URL}/${DEFAULT_WIDTH_BACKDROP}${detailedmovie.backdrop_path}`;
+
   return (
     <main className="main-container">
       <div className={styles['film-detail']}>
         <header className={styles['film-header']}>
-          <h2 className={styles['film-header__title']}>Jack Reacher: Nunca vuelvas atrás</h2>
-          <p className={styles['film-header__tagline']}>Nunca cedas. Nunca te des por vencido. Nunca vuelvas.</p>
+          <img
+            className={styles['film-header__background']}
+            src={imgHeroPath}
+            alt={`background ${detailedmovie.title}`}
+          />
+          <h2 className={styles['film-header__title']}>{detailedmovie.title}</h2>
+          <p className={styles['film-header__tagline']}>{detailedmovie.tagline}.</p>
           <p className={styles['film-header__valuation']}>
-            Valoracion: <span className={styles['film-header__rate']}>5.9</span>
+            Valoración:{' '}
+            <span className={styles['film-header__rate']}>{detailedmovie.vote_average}</span>
           </p>
         </header>
         <section className={styles['film-body']}>
           <img
             className={styles['film-body__image']}
-            src="https://image.tmdb.org/t/p/w500//gsIaANx3PVGMkzHfwdCOMUP0o7U.jpg"
-            alt="Poster de la pelicula"
+            src={imgPosterPath}
+            alt={`Poster de la pelicula ${detailedmovie.title}`}
           />
 
           <div className={styles['film-body__data']}>
-            <h3 className={styles['film-body__title']}>Jack Reacher: Never Go Back</h3>
+            <h3 className={styles['film-body__title']}>{detailedmovie.original_title}</h3>
             <p className={styles['film-body__release']}>
-              Fecha de Estreno: <span className={styles['film-body__date']}>12-09-2009</span>
+              Fecha de Estreno:{' '}
+              <span className={styles['film-body__date']}>{detailedmovie.release_date}</span>
             </p>
-            <p className={styles['film-body__sipnosis']}>
-              La Mayor Susan Turner, líder de la antigua unidad militar de Reacher, es falsamente acusada de traición.
-              Jack Reacher tendrá que sacarla de prisión y descubrir la verdad detrás de una conspiración gubernamental
-              para limpiar sus nombres y salvar sus vidas. Durante el escape, Reacher descubrirá un secreto de su pasado
-              que podría cambiar su vida para siempre. Secuela de Jack Reacher (2012).
-            </p>
+            <p className={styles['film-body__sipnosis']}>{detailedmovie.overview}</p>
           </div>
         </section>
       </div>

@@ -21,7 +21,9 @@ export const getConfigurationAPI = async () => {
  */
 export const getMovieById = async (id) => {
   try {
-    const resp = await fetch(`${API_URL}/movie/${id}?api_key=${API_KEY}&language=${DEFAULT_LANGUAGE}`);
+    const resp = await fetch(
+      `${API_URL}/movie/${id}?api_key=${API_KEY}&language=${DEFAULT_LANGUAGE}`
+    );
     const data = await resp.json();
     return data;
   } catch (error) {
@@ -43,7 +45,7 @@ export const getMovieById = async (id) => {
 export const getMoviesByTerm = async (term, page = 1) => {
   try {
     const resp = await fetch(
-      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}&language=${DEFAULT_LANGUAGE}page=${page}`
+      `${API_URL}/search/movie?api_key=${API_KEY}&query=${term}&language=${DEFAULT_LANGUAGE}&page=${page}`
     );
     const data = resp.json();
 
