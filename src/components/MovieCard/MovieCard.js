@@ -1,9 +1,6 @@
 import React from 'react';
 import { BsBookmarkPlus, BsBookmarkDashFill } from 'react-icons/bs';
-import {
-  useDispatch
-  // useSelector
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { DEFAULT_WIDTH_POSTER, IMAGE_URL } from '../../services/constants';
 import styles from './styles.module.css';
