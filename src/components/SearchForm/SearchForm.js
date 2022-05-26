@@ -13,10 +13,14 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(startGetAllMovies(search, MINIMUM_PAGE));
-    dispatch(setCurrentSearch(search));
-    dispatch(resetCurrentPage());
-    reset();
+    console.log('en el handle');
+    if (search) {
+      dispatch(startGetAllMovies(search, MINIMUM_PAGE));
+      dispatch(setCurrentSearch(search));
+      dispatch(resetCurrentPage());
+      reset();
+    }
+    return search;
   };
 
   return (
@@ -30,7 +34,12 @@ export default function SearchForm() {
           onChange={handleInputChange}
           placeholder="Busca tu pelicula"
         />
-        <button className={styles.search__button} type="button" onClick={handleSubmit}>
+        <button
+          className={styles.search__button}
+          type="button"
+          onClick={handleSubmit}
+          name="searchButton"
+        >
           <GoSearch className={styles.search__icon} />
         </button>
       </form>
