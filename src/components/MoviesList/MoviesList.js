@@ -9,7 +9,6 @@ export default function MoviesList() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { movies } = useSelector((state) => state.movie);
-  // usar um selector para current page.
 
   useEffect(() => {
     dispatch(startGetAllMovies(DEFAULT_VALUE, MINIMUM_PAGE));
