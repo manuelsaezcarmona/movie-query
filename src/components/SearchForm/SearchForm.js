@@ -13,14 +13,11 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('en el handle');
-    if (search) {
-      dispatch(startGetAllMovies(search, MINIMUM_PAGE));
-      dispatch(setCurrentSearch(search));
-      dispatch(resetCurrentPage());
-      reset();
-    }
-    return search;
+
+    dispatch(startGetAllMovies(search, MINIMUM_PAGE));
+    dispatch(setCurrentSearch(search));
+    dispatch(resetCurrentPage());
+    reset();
   };
 
   return (
