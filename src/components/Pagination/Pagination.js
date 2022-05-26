@@ -4,6 +4,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nextPage, previousPage } from '../../redux/actions/settings';
 import { MINIMUM_PAGE } from '../../services/constants';
+import styles from './styles.module.css';
 
 export default function Pagination() {
   const { currentpage } = useSelector((state) => state.settings);
@@ -20,22 +21,22 @@ export default function Pagination() {
   const isDisabled = (threshold) => threshold === currentpage;
 
   return (
-    <div className="pagination">
+    <div className={styles.pagination}>
       <button
         type="button"
-        className="pagination__button"
+        className={styles.pagination__button}
         id="prevButton"
         onClick={handlePreviousClick}
         disabled={isDisabled(MINIMUM_PAGE)}
       >
         Previous
       </button>
-      <p className="pagination__currentpage">
+      <p className={styles.pagination__currentpage}>
         {currentpage} / {totalpages}
       </p>
       <button
         type="button"
-        className="pagination__button"
+        className={styles.pagination__button}
         id="nextButton"
         onClick={handleNextClick}
         disabled={isDisabled(totalpages)}

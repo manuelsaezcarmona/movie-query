@@ -63,6 +63,7 @@
 .bookmark {
   color: var(--text-color);
   font-size: 1.5em;
+  cursor: pointer;
 }
 
 @media (min-width: 769px) {
