@@ -8,5 +8,6 @@ export const types = {
   MOVIE_SET_DETAILED_MOVIE: '@movie/setdetailed',
 
   SETTINGS_SET_CURRENTPAGE: '@settings/setcurrentpage',
-  SETTINGS_SET_CURRENT_SEARCH: '@settings/setcurrentsearch'
+  SETTINGS_SET_CURRENT_SEARCH: '@settings/setcurrentsearch',
+  SETTINGS_RESET_CURRENTPAGE: '@settings/resetcurrentpage'
 };

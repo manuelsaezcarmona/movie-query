@@ -19,3 +19,5 @@ export const setCurrentSearch = (searchFilm) => ({
   type: types.SETTINGS_SET_CURRENT_SEARCH,
   payload: searchFilm
 });
+
+export const resetCurrentPage = () => ({ type: types.SETTINGS_RESET_CURRENTPAGE });

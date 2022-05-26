@@ -20,6 +20,11 @@ export const settingsReducer = (state = initialState, action) => {
         ...state,
         searchfilm: action.payload
       };
+    case types.SETTINGS_RESET_CURRENTPAGE:
+      return {
+        ...state,
+        currentpage: MINIMUM_PAGE
+      };
     default:
       return state;
   }
