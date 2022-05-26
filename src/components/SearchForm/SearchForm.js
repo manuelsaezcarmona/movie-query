@@ -13,6 +13,7 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     dispatch(startGetAllMovies(search, MINIMUM_PAGE));
     dispatch(setCurrentSearch(search));
     dispatch(resetCurrentPage());
@@ -30,7 +31,9 @@ export default function SearchForm() {
           onChange={handleInputChange}
           placeholder="Busca tu pelicula"
         />
+
         <button className={styles.search__button} type="submit" onClick={handleSubmit}>
+
           <GoSearch className={styles.search__icon} />
         </button>
       </form>

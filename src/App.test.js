@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const element = screen.getByText(/Buscador de Peliculas/i);
+  const element = screen.getByText(/TMDB SEARCHER/i);
   expect(element).toBeInTheDocument();
 });
