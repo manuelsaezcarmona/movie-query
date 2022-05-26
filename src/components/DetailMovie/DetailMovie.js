@@ -15,12 +15,17 @@ export default function DetailMovie() {
   }, []);
   const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${detailedmovie.poster_path}`;
   // eslint-disable-next-line no-unused-vars
-  const imgHeroPath = `${IMAGE_URL}/${DEFAULT_WIDTH_BACKDROP}${detailedmovie.poster_path}`;
+  const imgHeroPath = `${IMAGE_URL}/${DEFAULT_WIDTH_BACKDROP}${detailedmovie.backdrop_path}`;
 
   return (
     <main className="main-container">
       <div className={styles['film-detail']}>
         <header className={styles['film-header']}>
+          <img
+            className={styles['film-header__background']}
+            src={imgHeroPath}
+            alt={`background ${detailedmovie.title}`}
+          />
           <h2 className={styles['film-header__title']}>{detailedmovie.title}</h2>
           <p className={styles['film-header__tagline']}>{detailedmovie.tagline}.</p>
           <p className={styles['film-header__valuation']}>

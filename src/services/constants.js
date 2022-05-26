@@ -11,7 +11,7 @@ export const DEFAULT_VALUE = 'Avengers';
 
 // Image full Path
 export const IMAGE_URL = 'https://image.tmdb.org/t/p';
-export const DEFAULT_WIDTH_BACKDROP = 'w300';
+export const DEFAULT_WIDTH_BACKDROP = 'w780';
 export const DEFAULT_WIDTH_POSTER = 'w342';
 
 // ejemplo de ruta de imagen (en este caso con poster_path)
