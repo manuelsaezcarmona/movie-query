@@ -8,5 +8,5 @@ export const types = {
   MOVIE_SET_DETAILED_MOVIE: '@movie/setdetailed',
 
   SETTINGS_SET_CURRENTPAGE: '@settings/setcurrentpage',
-  SETTINGS_SET_TOTALPAGES: '@settings/settotalpages'
+  SETTINGS_SET_CURRENT_SEARCH: '@settings/setcurrentsearch'
 };

@@ -3,18 +3,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import MovieCard from '../MovieCard/MovieCard';
 import styles from './styles.module.css';
 import { startGetAllMovies } from '../../redux/actions/movie';
-import { DEFAULT_VALUE, MINIMUM_PAGE } from '../../services/constants';
+
 import Pagination from '../Pagination/Pagination';
 
 export default function MoviesList() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+
   const { movies } = useSelector((state) => state.movie);
+  const { currentpage, searchfilm } = useSelector((state) => state.settings);
 
   useEffect(() => {
-    dispatch(startGetAllMovies(DEFAULT_VALUE, MINIMUM_PAGE));
+    dispatch(startGetAllMovies(searchfilm, currentpage));
+
     setLoading(true);
-  }, []); // [state.settings.currentpage]
+  }, [currentpage]);
 
   if (!loading) {
     return <div className="spinner" />;

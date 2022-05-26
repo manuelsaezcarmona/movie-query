@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
 import styles from './styles.module.css';
 import { startGetAllMovies } from '../../redux/actions/movie';
+import { MINIMUM_PAGE } from '../../services/constants';
 
 export default function SearchForm() {
   const [formValues, handleInputChange, reset] = useForm({ search: '' });
@@ -11,7 +12,7 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(startGetAllMovies(search, 1));
+    dispatch(startGetAllMovies(search, MINIMUM_PAGE));
     reset();
   };
 

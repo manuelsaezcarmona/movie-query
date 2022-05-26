@@ -1,9 +1,9 @@
 import { types } from '../actiontypes';
-import { MINIMUM_PAGE } from '../../services/constants';
+import { DEFAULT_VALUE, MINIMUM_PAGE } from '../../services/constants';
 
 const initialState = {
   currentpage: MINIMUM_PAGE,
-  totalpages: MINIMUM_PAGE
+  searchfilm: DEFAULT_VALUE
 };
 
 export const settingsReducer = (state = initialState, action) => {
@@ -14,12 +14,12 @@ export const settingsReducer = (state = initialState, action) => {
         currentpage: action.payload
       };
     }
-    case types.SETTINGS_SET_TOTALPAGES: {
+
+    case types.SETTINGS_SET_CURRENT_SEARCH:
       return {
         ...state,
-        totalpages: action.payload
+        searchfilm: action.payload
       };
-    }
     default:
       return state;
   }

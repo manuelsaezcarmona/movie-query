@@ -10,7 +10,12 @@ export const nextPage = (page) => {
   return { type: types.SETTINGS_SET_CURRENTPAGE, payload: incrementedPage };
 };
 
-export const setTotalPages = (totalPages) => ({
-  type: types.SETTINGS_SET_TOTALPAGES,
-  payload: totalPages
+export const setCurrentPage = (page) => ({
+  type: types.SETTINGS_SET_CURRENTPAGE,
+  payload: page
+});
+
+export const setCurrentSearch = (searchFilm) => ({
+  type: types.SETTINGS_SET_CURRENT_SEARCH,
+  payload: searchFilm
 });
