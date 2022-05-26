@@ -18,16 +18,30 @@ export default function Pagination() {
   const handleNextClick = () => {
     dispatch(nextPage(currentpage));
   };
+
   const isDisabled = (threshold) => threshold === currentpage;
+
+  const getButtonClassName = (disabled) => {
+    const className = disabled
+      ? `${styles.pagination__button} ${styles['pagination__button--disabled']}`
+      : `${styles.pagination__button}`;
+    return className;
+  };
+
+  const prevDisabled = isDisabled(MINIMUM_PAGE);
+  const nextDisabled = isDisabled(totalpages);
+
+  const prevButtonClassName = getButtonClassName(prevDisabled);
+  const nextButtonClassName = getButtonClassName(nextDisabled);
 
   return (
     <div className={styles.pagination}>
       <button
         type="button"
-        className={styles.pagination__button}
+        className={prevButtonClassName}
         id="prevButton"
         onClick={handlePreviousClick}
-        disabled={isDisabled(MINIMUM_PAGE)}
+        disabled={prevDisabled}
       >
         Previous
       </button>
@@ -36,10 +50,10 @@ export default function Pagination() {
       </p>
       <button
         type="button"
-        className={styles.pagination__button}
+        className={nextButtonClassName}
         id="nextButton"
         onClick={handleNextClick}
-        disabled={isDisabled(totalpages)}
+        disabled={nextDisabled}
       >
         Next
       </button>
