@@ -4,6 +4,7 @@ import MovieCard from '../MovieCard/MovieCard';
 import styles from './styles.module.css';
 import { startGetAllMovies } from '../../redux/actions/movie';
 import { DEFAULT_VALUE, MINIMUM_PAGE } from '../../services/constants';
+import Pagination from '../Pagination/Pagination';
 
 export default function MoviesList() {
   const [loading, setLoading] = useState(false);
@@ -19,18 +20,21 @@ export default function MoviesList() {
     return <div className="spinner" />;
   }
   return (
-    <section className={styles.movies}>
-      {movies.length ? (
-        <ul className={styles.movies__list}>
-          {movies.map((movie) => (
-            <li className={styles.movies__item} key={`${movie.id}_mov`}>
-              <MovieCard movie={movie} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className={styles.movies__text}>No se han encontrado Películas</p>
-      )}
-    </section>
+    <>
+      <Pagination />
+      <section className={styles.movies}>
+        {movies.length ? (
+          <ul className={styles.movies__list}>
+            {movies.map((movie) => (
+              <li className={styles.movies__item} key={`${movie.id}_mov`}>
+                <MovieCard movie={movie} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className={styles.movies__text}>No se han encontrado Películas</p>
+        )}
+      </section>
+    </>
   );
 }
