@@ -2,6 +2,8 @@
 
 Pequeña aplicación de consulta de peliculas consumiendo la api de [the movie db](https://www.themoviedb.org/)
 
+Puedes verla en accion en https://movies-query.netlify.app/
+
 ### Comenzando 🚀
 
 Para ejecutar esta aplicación en tu maquina, necesitaras tener instalado Node en tu ordenador.
@@ -28,19 +30,21 @@ Cuando termine la instalación de los paquetes , puedes lanzar el proyecto con .
 npm start
 ```
 
-Si el script no te lanza una ventana de navegador con la aplicación. Puedes acceder a traves de la siguiente dirección : [http://localhost:3000](http://localhost:3000) 
+Si el script no te lanza una ventana de navegador con la aplicación. Puedes acceder a traves de la siguiente dirección : [http://localhost:3000](http://localhost:3000)
+
 ### Ejecutando las pruebas ⚙️
 
 La aplicación contiene pruebas automatizadas realizadas bajo el test runner jest y react-testing-library para los test de modulos con React.
 
-Para ejecutar las pruebas, desde el terminal lanza el  comando :
+Para ejecutar las pruebas, desde el terminal lanza el comando :
 
 ```bash
 npm test
 ```
+
 ### Tecnologías 🖥
 
-- React v18 
+- React v18
   - React-Router v6 . Para la gestión de rutas
   - React-Redux - Redux-thunk . Para la implementación del patrón redux para la gestión del estado
   - React-icons - Iconos tratados como componentes.
@@ -48,13 +52,13 @@ npm test
   - Prettier - Para formatear el código segun la guia de estilo
   - [Create React App](https://github.com/facebook/create-react-app). .- Como creador del proyeto y empaquetador.
 
-###  Consideraciones en el desarrollo
+### Consideraciones en el desarrollo
 
 #### Gestión Global del estado.
 
-Para una aplicación como la desarrollada usar la libreria Redux y thunk como "middleware" para acciones asincronas, pueder ser "overKill" 
+Para una aplicación como la desarrollada usar la libreria Redux y thunk como "middleware" para acciones asincronas, pueder ser "overKill"
 
-El objetivo es implementarla  como práctica para aplicaciones con más escala.
+El objetivo es implementarla como práctica para aplicaciones con más escala.
 Seguramente con el uso de Contexto seria suficiente.
 
 #### Definición de Datos.
@@ -75,19 +79,20 @@ He usado dos implementaciones:
 
 1.  La carpeta styles recoge todos los estilos que se van a aplicar de manera global a la aplicacion. En el fichero settings.css se encuentra la guia de estilo con la definición de tipologias, colores y layouts globales que permitan una visualización homogenea de los elementos y una imagen de marca.
 
-2. Uso de cssModules, para cada componente se define clases unicas y exclusivas evitando la colision de clases. En estos css modules se aplicaran las variables definidas a nivel global.
+2.  Uso de cssModules, para cada componente se define clases unicas y exclusivas evitando la colision de clases. En estos css modules se aplicaran las variables definidas a nivel global.
 
 #### Uso de constantes
+
 He incorporado el fichero constants.js donde recogo lo que son las variables de entorno.
-Normalmente las incorporo en un fichero .env y se recogerian a traves de ```process.env.VARNAME```
+Normalmente las incorporo en un fichero .env y se recogerian a traves de `process.env.VARNAME`
 
 No es buena práctica incluir estos ficheros como parte del repositorio y por cuestión de practica lo he incluido en el proyecto.
 
 ### Mejoras.
 
--  A nivel funcional
-  - Incluir usuarios en la app
-  - Diseñar una landing page
+- A nivel funcional
+- Incluir usuarios en la app
+- Diseñar una landing page
 - A nivel tecnico
   - Persistencia de datos, bien a traves de front básico con localStorage o IndexDB, o a traves de un back
   - Optimización: Refactor de código en custom hooks y mayor granularizacion de los componentes.
@@ -95,7 +100,7 @@ No es buena práctica incluir estos ficheros como parte del repositorio y por cu
 
 ### Gestión de versiones GIT | GitHub.
 
-Aparte de usar  git para la gestion local de versiones y github para la gestion descentralizada, lo uso como apoyo a una metodología que suelo usar en los desarrollos. En principio es secuencial pero eso no significa que pasar a la siguiente fase|iteración|rama sea inamovible y susceptible a cambios que es , lo más habitual. 
+Aparte de usar git para la gestion local de versiones y github para la gestion descentralizada, lo uso como apoyo a una metodología que suelo usar en los desarrollos. En principio es secuencial pero eso no significa que pasar a la siguiente fase|iteración|rama sea inamovible y susceptible a cambios que es , lo más habitual.
 
 Cada una de estas ramas pueden tener tareas que pueden ser parte de un backlog / canvas a incorporar durante los sprints, dailys etc..
 
@@ -104,17 +109,18 @@ Las ramas que uso suelen ser:
 - **master - main:** unicamente para iniciar el proyecto y para el posterior deploy.
 - **structure**: la parte de creación de estructura para que el resto de la app pueda
   desarrollarse. Esta suele incluir dos subramas
-  
-  - *structure-data.* Defino e implemento la estructura de datos, los metodos para obtenerlos y el sistema de gestion de estado si es necesario global o por feature. Redux o Context en función del tamaño del proyecto.
-  - *structure-route*. Definir las rutas y endpoints de la app y que funcione correctamente el enrutamiento.
+
+  - _structure-data._ Defino e implemento la estructura de datos, los metodos para obtenerlos y el sistema de gestion de estado si es necesario global o por feature. Redux o Context en función del tamaño del proyecto.
+  - _structure-route_. Definir las rutas y endpoints de la app y que funcione correctamente el enrutamiento.
+
 - **develop** - Se desarrolla la app.
 
-  - *develop-static*. Se desarrollan los componente sin tener logica en funcion del diseño que previamente se ha entregado.
+  - _develop-static_. Se desarrollan los componente sin tener logica en funcion del diseño que previamente se ha entregado.
     - Pantallas (Pages)
     - Layouts
     - Containers
     - Components
-  - *develop-dynamic*: Programar la logica del negocio.
+  - _develop-dynamic_: Programar la logica del negocio.
     - Actions y gestion del etado
     - hooks
     - conditional rendering
@@ -132,4 +138,3 @@ En las llamadas puede haber dos errores.
 2 - Algún parametro como una API_KEY incorrecta.
 
 En el primer caso se enviara un error (try / catch), en el segundo caso devolvera un objeto data con información sobre el error producido. En el metodo no se hace necesario mas gestion de errores.
-
