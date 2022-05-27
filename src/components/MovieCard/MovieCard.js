@@ -51,9 +51,17 @@ export default function MovieCard({ movie }) {
           </div>
 
           {!favMovie ? (
-            <BsBookmarkPlus className={styles.bookmark} onClick={handleAddFavourite} />
+            <BsBookmarkPlus
+              title="bookmark-plus"
+              className={styles.bookmark}
+              onClick={handleAddFavourite}
+            />
           ) : (
-            <BsBookmarkDashFill className={styles.bookmark} onClick={handleDeleteFavourite} />
+            <BsBookmarkDashFill
+              title="bookmark-minus"
+              className={styles.bookmark}
+              onClick={handleDeleteFavourite}
+            />
           )}
 
           <div className={styles['movie-card__ratecontainer']}>

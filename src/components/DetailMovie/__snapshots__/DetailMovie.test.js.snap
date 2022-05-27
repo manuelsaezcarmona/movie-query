@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Given the DetailMovie Component The component is rendered (take a snapshot 1`] = `
+exports[`Given the DetailMovie Component The component is rendered (take a snapshot) 1`] = `
 <DocumentFragment>
   <main
     class="main-container"

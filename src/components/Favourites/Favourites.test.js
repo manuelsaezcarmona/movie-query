@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { render } from '@testing-library/react';
-import DetailMovie from './DetailMovie';
+import Favourites from './Favourites';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -25,28 +25,23 @@ const initialState = {
     searchfilm: 'Avengers'
   }
 };
-
 const store = mockStore(initialState);
 store.dispatch = jest.fn();
 
-jest.mock('../../redux/actions/movie', () => ({
-  startGetMovieById: jest.fn()
-}));
-
-describe('Given the DetailMovie Component', () => {
+describe('given the Favourites Component', () => {
   beforeEach(() => {
     render(
       <Provider store={store}>
-        <DetailMovie />
+        <Favourites />
       </Provider>
     );
   });
   test('The component is rendered (take a snapshot)', () => {
     const { asFragment } = render(
       <Provider store={store}>
-        <DetailMovie />
+        <Favourites />
       </Provider>
     );
-    expect(asFragment(<DetailMovie />)).toMatchSnapshot();
+    expect(asFragment(<Favourites />)).toMatchSnapshot();
   });
 });
