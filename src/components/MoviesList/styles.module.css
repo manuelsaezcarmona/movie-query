@@ -1,0 +1,22 @@
+.movies__list {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  gap: 6px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.movies__text {
+  font-family: var(--navbar-font);
+  font-size: 2em;
+  text-align: center;
+  margin: 20vh 0;
+}
+
+@media (min-width: 769px) {
+  .movies__text {
+    font-size: 2em;
+  }
+}

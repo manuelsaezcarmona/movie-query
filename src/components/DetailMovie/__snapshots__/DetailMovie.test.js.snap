@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given the DetailMovie Component The component is rendered (take a snapshot) 1`] = `
+<DocumentFragment>
+  <main
+    class="main-container"
+  >
+    <div
+      class="film-detail"
+    >
+      <header
+        class="film-header"
+      >
+        <img
+          alt="background undefined"
+          class="film-header__background"
+          src="https://image.tmdb.org/t/p/w780undefined"
+        />
+        <h2
+          class="film-header__title"
+        />
+        <p
+          class="film-header__tagline"
+        >
+          .
+        </p>
+        <p
+          class="film-header__valuation"
+        >
+          Valoración: 
+          <span
+            class="film-header__rate"
+          />
+        </p>
+      </header>
+      <section
+        class="film-body"
+      >
+        <img
+          alt="Poster de la pelicula undefined"
+          class="film-body__image"
+          src="https://image.tmdb.org/t/p/w342undefined"
+        />
+        <div
+          class="film-body__data"
+        >
+          <h3
+            class="film-body__title"
+          />
+          <p
+            class="film-body__release"
+          >
+            Fecha de Estreno: 
+            <span
+              class="film-body__date"
+            />
+          </p>
+          <p
+            class="film-body__sipnosis"
+          />
+        </div>
+      </section>
+    </div>
+  </main>
+</DocumentFragment>
+`;
