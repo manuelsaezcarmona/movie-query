@@ -2,13 +2,7 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import { types } from '../actiontypes';
-import {
-  getAllMovies,
-  startGetMovieById,
-  setMovieDetail,
-  setActiveMovie,
-  startGetAllMovies
-} from './movie';
+import { getAllMovies, startGetMovieById, startGetAllMovies } from './movie';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
