@@ -3,7 +3,6 @@ import { types } from '../actiontypes';
 
 export const getAllMovies = (result) => ({ type: types.MOVIE_GET_ALLMOVIES, payload: result });
 
-// eslint-disable-next-line consistent-return
 export const startGetAllMovies = (term, page) => async (dispatch) => {
   try {
     const result = await getMoviesByTerm(term, page);

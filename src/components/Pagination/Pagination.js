@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-boolean-value */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nextPage, previousPage } from '../../redux/actions/settings';

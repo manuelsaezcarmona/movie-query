@@ -14,7 +14,7 @@ export default function DetailMovie() {
     dispatch(startGetMovieById(movieid));
   }, []);
   const imgPosterPath = `${IMAGE_URL}/${DEFAULT_WIDTH_POSTER}${detailedmovie.poster_path}`;
-  // eslint-disable-next-line no-unused-vars
+
   const imgHeroPath = `${IMAGE_URL}/${DEFAULT_WIDTH_BACKDROP}${detailedmovie.backdrop_path}`;
 
   return (
