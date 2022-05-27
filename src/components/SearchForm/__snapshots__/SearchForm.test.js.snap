@@ -17,8 +17,7 @@ exports[`Given the SearchForm The component is rendered 1`] = `
       />
       <button
         class="search__button"
-        name="searchButton"
-        type="button"
+        type="submit"
       >
         <svg
           class="search__icon"

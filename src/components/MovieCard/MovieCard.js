@@ -1,9 +1,6 @@
 import React from 'react';
 import { BsBookmarkPlus, BsBookmarkDashFill } from 'react-icons/bs';
-import {
-  useDispatch
-  // useSelector
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { DEFAULT_WIDTH_POSTER, IMAGE_URL } from '../../services/constants';
 import styles from './styles.module.css';
@@ -54,9 +51,17 @@ export default function MovieCard({ movie }) {
           </div>
 
           {!favMovie ? (
-            <BsBookmarkPlus className={styles.bookmark} onClick={handleAddFavourite} />
+            <BsBookmarkPlus
+              title="bookmark-plus"
+              className={styles.bookmark}
+              onClick={handleAddFavourite}
+            />
           ) : (
-            <BsBookmarkDashFill className={styles.bookmark} onClick={handleDeleteFavourite} />
+            <BsBookmarkDashFill
+              title="bookmark-minus"
+              className={styles.bookmark}
+              onClick={handleDeleteFavourite}
+            />
           )}
 
           <div className={styles['movie-card__ratecontainer']}>

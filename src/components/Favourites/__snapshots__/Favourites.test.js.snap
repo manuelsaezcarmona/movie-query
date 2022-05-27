@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`given the Favourites Component The component is rendered (take a snapshot) 1`] = `
+<DocumentFragment>
+  <main
+    class="main-container"
+  >
+    <h2
+      class="header"
+    >
+      Mis Peliculas Favoritas
+    </h2>
+    <section
+      class="favourites"
+    >
+      <p
+        class="favourites__text"
+      >
+        No tienes peliculas Favoritas
+      </p>
+    </section>
+  </main>
+</DocumentFragment>
+`;
